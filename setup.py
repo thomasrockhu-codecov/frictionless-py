@@ -39,6 +39,7 @@ TESTS_REQUIRE = [
     "pytest-timeout",
     "pydoc-markdown",
     "docstring-parser",
+    "yattag"
 ]
 EXTRAS_REQUIRE = {
     "bigquery": ["google-api-python-client>=1.12.1"],

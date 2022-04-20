@@ -1,4 +1,5 @@
 from copy import copy, deepcopy
+from tableschema_to_template import create_xlsx
 from .exception import FrictionlessException
 from .metadata import Metadata
 from .field import Field
@@ -269,6 +270,17 @@ class Schema(Metadata):
                 field.constraints["required"] = True
 
         return schema
+
+    def to_excel_template(self, xlsx_path: str) -> any:
+        """Export schema data to excel
+
+        Parameters:
+            xlsx_path: path of excel file to create with ".xlsx" extension
+
+        Returns:
+            any: excel template
+        """
+        return create_xlsx(self, xlsx_path)
 
     # Metadata
 
